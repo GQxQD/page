@@ -1,31 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>这是我的网页</title>
-    <style type="text/css" media="screen">
-        .bg{
-            width: 656px;
-            height: 283px;
-            background-image: url(hzw.png);
-            background-color: black;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <title>我的网页</title>
 </head>
 <body>
-<h1>这是我的网页</h1>
-<video autobuffer autoloop loop controls>
-    <source src="smile.mp4">
-    <source src="/media/video.m4v">
-    <object type="video/ogg" data="smile.mp4" width="320" height="240">
-    <param name="src" value="smile.mp4">
-    <param name="autoplay" value="false">
-    <param name="autoStart" value="0">
-    <p><a href="smile.mp4">Download this video file.</a></p>
-    </object>
-</video>
-<div class="bg">
-    
-</div>
-<img src="hzw.png" alt="hzw.png">
+<h1>我的第一个网页</h1>
+
+<script type="text/javascript">
+    $.ajax({
+        url:'http://123.207.98.175:8080/index.jsp',
+        dataType:'jsonp',
+        jsonp:'testcallback',
+        jsonpCallback:"testcallback",
+        success:function (data) {
+            alert('success '+data.name);
+        },
+        error:function () {
+            alert('error ');
+        }
+    });
+</script>
 </body>
 </html>
