@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>在线留言板</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1>在线留言板</h1>
+<div id="app">
+    <h1 v-html="title">{{title}}</h1>
+    <hr>
+    <button @click="getData">获取json数据</button>
+    <table v-if="data!=null && data.length>0">
+        <tr v-for="(item,index) in data">
+            <td>{{item.title}}</td>
+            <td>{{item.content}}</td>
+            <td>{{item.user}}</td>
+            <td>{{item.date}}</td>
+        </tr>
+    </table>
+</div>
+
+<script src="js/ext/vue.js"></script>
+<script src="js/ext/vue-resource.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
